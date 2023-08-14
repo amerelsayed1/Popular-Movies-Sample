@@ -9,13 +9,11 @@
 - AndroidApp (for UI logic, with MVVM)
 
 ## Clean Architecture
- <img src="images/clean_architecture_reloaded_main.png" alt="ArchiTecture logo"/>
+ <img src="images/clean_architecture_reloaded_main.png" alt="ArchiTecture"/>
 
 ## Android 3 Layers Architecture
-<img src="images/clean_architecture_reloaded_layers.png.png" alt="ArchiTecture logo"/>
+<img src="images/clean_architecture_reloaded_layers.png.png" alt="layers"/>
 
 ## screen Shots
-<p float="left">
-  <img src="images/clean_architecture_reloaded_main.png" width="50%" />
-  <img src="images/clean_architecture_reloaded_main.png" width="49%" />
-</p>
+<img src="images/clean_architecture_reloaded_main.png" width="50%" />
+<img src="images/clean_architecture_reloaded_main.png" width="49%" />
