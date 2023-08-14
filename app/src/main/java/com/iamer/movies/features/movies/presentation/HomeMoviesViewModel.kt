@@ -19,7 +19,6 @@ import javax.inject.Inject
 class HomeMoviesViewModel @Inject constructor(
     private val moviesUseCase: MoviesUseCase,
     private val movieDetailsUseCase: MovieDetailsUseCase,
-    private val searchMoviesAndSeriesUseCase: SearchMoviesAndSeriesUseCase
 ) :
     ViewModel() {
 
