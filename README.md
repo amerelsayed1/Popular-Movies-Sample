@@ -16,6 +16,6 @@
 
 ## screen Shots
 <p float="left">
-  <img src="images/home_screen.png" width="150" />
-  <img src="images/details_screen.png" width="150" />
+  <img src="images/home_screen.png" width="200" />
+  <img src="images/details_screen.png" width="200" />
 </p>
