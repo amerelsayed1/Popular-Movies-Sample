@@ -1,5 +1,4 @@
- <img src="images/logo.png" alt="ArchiTecture logo"/>
-
+## MostPopular Movies Sample 
 
 ![Latest Movies](images/home_screen.png)
 ![Movies Search Hint](images/details_screen.png)
@@ -16,5 +15,7 @@
 <img src="images/clean_architecture_reloaded_layers.png" alt="layers"/>
 
 ## screen Shots
-<img src="images/home_screen.png" width="50%" />
-<img src="images/details_screen.png" width="49%" />
+<p float="left">
+  <img src="images/home_screen.png" width="250" />
+  <img src="images/details_screen.png" width="250" />
+</p>
