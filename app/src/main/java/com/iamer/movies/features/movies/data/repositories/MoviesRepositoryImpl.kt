@@ -2,7 +2,6 @@ package com.iamer.movies.features.movies.data.repositories
 
 import com.iamer.movies.core.network.NetworkHandler
 import com.iamer.movies.core.network.RequestHelper.request
-import com.iamer.movies.core.network.ResponseBase
 import com.iamer.movies.core.network.usecase.DataState
 import com.iamer.movies.features.movies.data.models.Movie
 import com.iamer.movies.features.movies.data.models.MoviesResponse

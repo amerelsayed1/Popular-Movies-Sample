@@ -1,7 +1,5 @@
 package com.iamer.movies.features.movies.data.network
 
-import com.iamer.movies.features.movies.data.models.MoviesResponse
-import retrofit2.Call
 import retrofit2.Retrofit
 import javax.inject.Inject
 import javax.inject.Singleton

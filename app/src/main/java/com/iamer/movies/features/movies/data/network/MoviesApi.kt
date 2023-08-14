@@ -1,6 +1,5 @@
 package com.iamer.movies.features.movies.data.network
 
-import com.iamer.movies.core.network.ResponseBase
 import com.iamer.movies.features.movies.data.models.Movie
 import com.iamer.movies.features.movies.data.models.MoviesResponse
 import retrofit2.Call
