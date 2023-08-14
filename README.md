@@ -12,8 +12,8 @@
  <img src="images/clean_architecture_reloaded_main.png" alt="ArchiTecture"/>
 
 ## Android 3 Layers Architecture
-<img src="images/clean_architecture_reloaded_layers.png.png" alt="layers"/>
+<img src="images/clean_architecture_reloaded_layers.png" alt="layers"/>
 
 ## screen Shots
-<img src="images/clean_architecture_reloaded_main.png" width="50%" />
-<img src="images/clean_architecture_reloaded_main.png" width="49%" />
+<img src="images/home_screen.png" width="50%" />
+<img src="images/details_screen.png" width="49%" />
