@@ -32,4 +32,9 @@ data class Movie(
     var overview: String,
     @SerializedName("release_date")
     var releaseDate: String
-)
+){
+
+    val imageUrl :String
+        get() = "https://image.tmdb.org/t/p/w780${backdropPath}"
+
+}
