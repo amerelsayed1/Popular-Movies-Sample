@@ -7,10 +7,10 @@ import com.iamer.movies.features.movies.domain.repositories.MoviesRepository
 import javax.inject.Inject
 
 class MoviesUseCase @Inject constructor(private val moviesRepository: MoviesRepository) :
-    UseCase<MoviesResponse, MoviesUseCase.Params>() {
+    UseCase<MoviesResponse, UseCase.None>() {
 
     data class Params(val query: String, val page: Int)
 
-    override suspend fun run(params: Params) =
-        moviesRepository.getPopularMovies(params.query, params.page)
+    override suspend fun run(params: None) =
+        moviesRepository.getPopularMovies()
 }

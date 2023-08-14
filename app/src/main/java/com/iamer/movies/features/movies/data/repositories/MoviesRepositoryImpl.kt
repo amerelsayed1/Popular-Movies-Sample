@@ -13,25 +13,24 @@ class MoviesRepositoryImpl @Inject constructor(
     private val networkHandler: NetworkHandler,
     private val service: MoviesApi
 ) : MoviesRepository {
-    override fun getMovies(query: String, page: Int): DataState<MoviesResponse> {
+    override fun searchMoviesAndSeries(query: String, page: Int): DataState<MoviesResponse> {
         return when (networkHandler.isNetworkAvailable()) {
             true -> request(
-                service.movies(query = query, page = page),
+                service.searchMoviesAndSeries(query = query, page = page),
                 MoviesResponse()
             )
+
             false -> DataState.Failure("")
         }
     }
 
-    override fun getPopularMovies(
-        query: String,
-        page: Int
-    ): DataState<MoviesResponse> {
+    override fun getPopularMovies(): DataState<MoviesResponse> {
         return when (networkHandler.isNetworkAvailable()) {
             true -> request(
-                service.popularMovies( page = page),
+                service.popularMovies(),
                 MoviesResponse()
             )
+
             false -> DataState.Failure("")
         }
     }

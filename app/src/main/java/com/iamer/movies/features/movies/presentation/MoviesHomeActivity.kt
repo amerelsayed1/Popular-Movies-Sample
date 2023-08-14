@@ -1,6 +1,7 @@
 package com.iamer.movies.features.movies.presentation
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,15 +51,16 @@ class MoviesHomeActivity : BaseActivity<ActivityMainBinding>() {
         when (status) {
 
             is DataState.Loading -> {
-
+                viewBinding?.progressBarLoading?.visibility = View.VISIBLE
             }
 
             is DataState.Success -> {
+                viewBinding?.progressBarLoading?.visibility = View.GONE
                 moviesAdapter.submitList(status.response.data)
             }
 
             is DataState.Failure -> {
-
+                viewBinding?.progressBarLoading?.visibility = View.GONE
             }
 
         }

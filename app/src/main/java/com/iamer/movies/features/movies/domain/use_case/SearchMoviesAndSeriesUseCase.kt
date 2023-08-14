@@ -12,5 +12,5 @@ class SearchMoviesAndSeriesUseCase @Inject constructor(private val moviesReposit
     data class Params(val query: String, val page: Int)
 
     override suspend fun run(params: Params) =
-        moviesRepository.getPopularMovies(params.query, params.page)
+        moviesRepository.searchMoviesAndSeries(params.query, params.page)
 }
