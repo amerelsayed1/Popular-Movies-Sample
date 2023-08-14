@@ -13,6 +13,8 @@ import com.iamer.movies.features.movies.data.models.Movie
 
 class MoviesAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback) {
 
+    internal var clickListener: (Movie?) -> Unit = { _ -> }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MovieViewHolder(
             ItemMovieBinding.inflate(
@@ -40,6 +42,11 @@ class MoviesAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallb
                 .centerCrop()
                 .placeholder(R.drawable.placeholder)
                 .into(binding.ivMovieImg);
+
+            itemView.setOnClickListener {
+                clickListener(data)
+            }
+
         }
     }
 

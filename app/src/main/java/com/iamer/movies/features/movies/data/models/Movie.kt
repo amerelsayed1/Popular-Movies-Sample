@@ -5,36 +5,36 @@ import com.google.gson.annotations.SerializedName
 
 data class Movie(
     @SerializedName("popularity")
-    var popularity: Double,
+    var popularity: Double = 0.0,
     @SerializedName("vote_count")
-    var voteCount: Int,
+    var voteCount: Int = 0,
     @SerializedName("video")
-    var video: Boolean,
+    var video: Boolean = false,
     @SerializedName("poster_path")
-    var posterPath: String,
+    var posterPath: String = "",
     @SerializedName("id")
-    var id: Int,
+    var id: Int = 0,
     @SerializedName("adult")
-    var adult: Boolean,
+    var adult: Boolean = false,
     @SerializedName("backdrop_path")
-    var backdropPath: String?,
+    var backdropPath: String? = "",
     @SerializedName("original_language")
-    var originalLanguage: String,
+    var originalLanguage: String = "",
     @SerializedName("original_title")
-    var originalTitle: String,
+    var originalTitle: String = "",
     @SerializedName("genre_ids")
-    var genreIds: List<Int>,
+    var genreIds: List<Int> = arrayListOf(),
     @SerializedName("title")
-    var title: String,
+    var title: String = "",
     @SerializedName("vote_average")
-    var voteAverage: Float,
+    var voteAverage: Float = 0.0f,
     @SerializedName("overview")
-    var overview: String,
+    var overview: String = "",
     @SerializedName("release_date")
-    var releaseDate: String
-){
+    var releaseDate: String = ""
+) {
 
-    val imageUrl :String
+    val imageUrl: String
         get() = "https://image.tmdb.org/t/p/w780${backdropPath}"
 
 }

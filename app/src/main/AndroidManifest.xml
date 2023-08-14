@@ -49,6 +49,7 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".features.movies.presentation.MoviesDetailsActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.iamer.movies.features.movies.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -44,6 +45,13 @@ class MoviesHomeActivity : BaseActivity<ActivityMainBinding>() {
                 LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
             layoutManager = rvMenuItemLayoutManager
             adapter = moviesAdapter
+        }
+
+        moviesAdapter.clickListener = { movie ->
+            Intent(this@MoviesHomeActivity, MoviesDetailsActivity::class.java).apply {
+                putExtra("movieId", movie?.id)
+                startActivity(this)
+            }
         }
     }
 

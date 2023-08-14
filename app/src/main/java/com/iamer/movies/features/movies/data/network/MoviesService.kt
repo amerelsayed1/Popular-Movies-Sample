@@ -1,5 +1,7 @@
 package com.iamer.movies.features.movies.data.network
 
+import com.iamer.movies.features.movies.data.models.MoviesResponse
+import retrofit2.Call
 import retrofit2.Retrofit
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -13,4 +15,7 @@ class MoviesService @Inject constructor(retrofit: Retrofit) : MoviesApi {
 
     override fun popularMovies(apiKey: String) =
         moviesApi.popularMovies(apiKey)
+
+    override fun getMovieDetails(movieId: Int, apiKey: String) =
+        moviesApi.getMovieDetails(movieId = movieId)
 }
