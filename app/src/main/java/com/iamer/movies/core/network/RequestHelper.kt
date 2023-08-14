@@ -2,7 +2,6 @@ package com.iamer.movies.core.network
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.iamer.movies.core.data.network.ErrorResponse
 import com.iamer.movies.core.network.usecase.DataState
 import retrofit2.Call
 

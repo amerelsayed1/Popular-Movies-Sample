@@ -1,6 +1,8 @@
 package com.iamer.movies.features.movies.presentation
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -44,21 +46,29 @@ class MoviesHomeActivity : BaseActivity<ActivityMainBinding>() {
             layoutManager = rvMenuItemLayoutManager
             adapter = moviesAdapter
         }
+
+        moviesAdapter.clickListener = { movie ->
+            Intent(this@MoviesHomeActivity, MoviesDetailsActivity::class.java).apply {
+                putExtra("movieId", movie?.id)
+                startActivity(this)
+            }
+        }
     }
 
     private fun renderMoviesList(status: DataState<MoviesResponse>) {
         when (status) {
 
             is DataState.Loading -> {
-
+                viewBinding?.progressBarLoading?.visibility = View.VISIBLE
             }
 
             is DataState.Success -> {
+                viewBinding?.progressBarLoading?.visibility = View.GONE
                 moviesAdapter.submitList(status.response.data)
             }
 
             is DataState.Failure -> {
-
+                viewBinding?.progressBarLoading?.visibility = View.GONE
             }
 
         }

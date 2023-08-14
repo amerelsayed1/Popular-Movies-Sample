@@ -1,25 +1,27 @@
 package com.iamer.movies.features.presentation
 
-/*import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.iamer.movies.core.data.Movie
-import com.iamer.movies.core.data.MoviesResponse
-import com.iamer.movies.core.data.network.ErrorResponse
-import com.iamer.movies.core.data.network.NetworkOutcome
-import com.iamer.movies.features.network.MoviesRepo
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.iamer.movies.core.network.usecase.DataState
+import com.iamer.movies.features.movies.data.models.Movie
+import com.iamer.movies.features.movies.data.models.MoviesResponse
+import com.iamer.movies.features.movies.domain.repositories.MoviesRepository
+import com.iamer.movies.features.movies.domain.use_case.MovieDetailsUseCase
+import com.iamer.movies.features.movies.domain.use_case.MoviesUseCase
+import com.iamer.movies.features.movies.presentation.HomeMoviesViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
 import org.junit.*
-import org.junit.rules.TestRule*/
+import org.junit.rules.TestRule
 
 class MoviesViewModelTest {
 
-   /* @get:Rule
+    /*@get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
 
-    private var moviesRepo: MoviesRepo = mockk()
+    private var moviesRepo: MoviesRepository = mockk()
 
     @ObsoleteCoroutinesApi
     private val mainThreadSurrogate = newSingleThreadContext("UI thread")
@@ -43,30 +45,40 @@ class MoviesViewModelTest {
     fun `get Movies Work Successfully`() = runBlocking {
 
         val movie = Movie(
-                id = 414,
-                video = false,
-                popularity = 20.574,
-                voteCount = 3293,
-                title = "Batman Forever",
-                releaseDate = "1995-06-16",
-                originalLanguage = "en",
-                originalTitle = "Batman Forever",
-                backdropPath = "/snlu32RmjldF9b068UURJg8sQtn.jpg",
-                adult = false,
-                posterPath = "/k6EQ2OewzjF8TcPgok9wxpPAgXW.jpg",
-                genreIds = listOf(28, 80, 14),
-                overview = "",
-                voteAverage = 5.3f
+            id = 414,
+            video = false,
+            popularity = 20.574,
+            voteCount = 3293,
+            title = "Batman Forever",
+            releaseDate = "1995-06-16",
+            originalLanguage = "en",
+            originalTitle = "Batman Forever",
+            backdropPath = "/snlu32RmjldF9b068UURJg8sQtn.jpg",
+            adult = false,
+            posterPath = "/k6EQ2OewzjF8TcPgok9wxpPAgXW.jpg",
+            genreIds = listOf(28, 80, 14),
+            overview = "",
+            voteAverage = 5.3f
         )
-        val mockData = MoviesResponse(page = 1, totalPages = 1, totalResults = 1, data = arrayListOf(movie))
+        val mockData = DataState.Success(
+            MoviesResponse(
+                page = 1,
+                totalPages = 1,
+                totalResults = 1,
+                data = arrayListOf(movie)
+            )
+        )
 
         //for suspend functions
-        coEvery { moviesRepo.getMovies("batman", 1) } answers {
-            NetworkOutcome(isRequestSuccess = true, responseBody = mockData, errorResponse = ErrorResponse())
+        coEvery { moviesRepo.getPopularMovies() } answers {
+            mockData
         }
 
-        val viewModel = MoviesViewModel(moviesRepo)
-        viewModel.getMovies("batman", 1).join()
+        val moviesUseCase: MoviesUseCase = mockk()
+         val movieDetailsUseCase: MovieDetailsUseCase = mockk()
+
+        val viewModel = HomeMoviesViewModel(moviesUseCase,movieDetailsUseCase)
+        viewModel.getMovies()
 
 
         Assert.assertEquals(1, viewModel.movieSuccessResponse.value?.page)
@@ -76,7 +88,10 @@ class MoviesViewModelTest {
 
         Assert.assertEquals(movie.id, viewModel.movieSuccessResponse.value?.data?.get(0)?.id)
         Assert.assertEquals(movie.adult, viewModel.movieSuccessResponse.value?.data?.get(0)?.adult)
-        Assert.assertEquals(movie.backdropPath, viewModel.movieSuccessResponse.value?.data?.get(0)?.backdropPath)
+        Assert.assertEquals(
+            movie.backdropPath,
+            viewModel.movieSuccessResponse.value?.data?.get(0)?.backdropPath
+        )
 
     }
 
@@ -84,26 +99,31 @@ class MoviesViewModelTest {
     fun `get Top Rated Movies Work Successfully`() = runBlocking {
 
         val movie = Movie(
-                id = 414,
-                video = false,
-                popularity = 20.574,
-                voteCount = 3293,
-                title = "Batman Forever",
-                releaseDate = "1995-06-16",
-                originalLanguage = "en",
-                originalTitle = "Batman Forever",
-                backdropPath = "/snlu32RmjldF9b068UURJg8sQtn.jpg",
-                adult = false,
-                posterPath = "/k6EQ2OewzjF8TcPgok9wxpPAgXW.jpg",
-                genreIds = listOf(28, 80, 14),
-                overview = "",
-                voteAverage = 5.3f
+            id = 414,
+            video = false,
+            popularity = 20.574,
+            voteCount = 3293,
+            title = "Batman Forever",
+            releaseDate = "1995-06-16",
+            originalLanguage = "en",
+            originalTitle = "Batman Forever",
+            backdropPath = "/snlu32RmjldF9b068UURJg8sQtn.jpg",
+            adult = false,
+            posterPath = "/k6EQ2OewzjF8TcPgok9wxpPAgXW.jpg",
+            genreIds = listOf(28, 80, 14),
+            overview = "",
+            voteAverage = 5.3f
         )
-        val mockData = MoviesResponse(page = 1, totalPages = 1, totalResults = 1, data = arrayListOf(movie))
+        val mockData =
+            MoviesResponse(page = 1, totalPages = 1, totalResults = 1, data = arrayListOf(movie))
 
         //for suspend functions
         coEvery { moviesRepo.getPopularMovies(1) } answers {
-            NetworkOutcome(isRequestSuccess = true, responseBody = mockData, errorResponse = ErrorResponse())
+            NetworkOutcome(
+                isRequestSuccess = true,
+                responseBody = mockData,
+                errorResponse = ErrorResponse()
+            )
         }
 
         val viewModel = MoviesViewModel(moviesRepo)
@@ -117,7 +137,10 @@ class MoviesViewModelTest {
 
         Assert.assertEquals(movie.id, viewModel.movieSuccessResponse.value?.data?.get(0)?.id)
         Assert.assertEquals(movie.adult, viewModel.movieSuccessResponse.value?.data?.get(0)?.adult)
-        Assert.assertEquals(movie.backdropPath, viewModel.movieSuccessResponse.value?.data?.get(0)?.backdropPath)
+        Assert.assertEquals(
+            movie.backdropPath,
+            viewModel.movieSuccessResponse.value?.data?.get(0)?.backdropPath
+        )
 
     }
 
@@ -125,7 +148,11 @@ class MoviesViewModelTest {
     @Test
     fun `get Movies Throws`() = runBlocking {
         coEvery { moviesRepo.getMovies("batman", 1) } answers {
-            NetworkOutcome(isRequestSuccess = false, responseBody = null, errorResponse = ErrorResponse(arrayListOf("no data")))
+            NetworkOutcome(
+                isRequestSuccess = false,
+                responseBody = null,
+                errorResponse = ErrorResponse(arrayListOf("no data"))
+            )
         }
 
         val viewModel = MoviesViewModel(moviesRepo)
@@ -138,7 +165,11 @@ class MoviesViewModelTest {
     @Test
     fun `get Top Movies Throws`() = runBlocking {
         coEvery { moviesRepo.getPopularMovies(1) } answers {
-            NetworkOutcome(isRequestSuccess = false, responseBody = null, errorResponse = ErrorResponse(arrayListOf("no data")))
+            NetworkOutcome(
+                isRequestSuccess = false,
+                responseBody = null,
+                errorResponse = ErrorResponse(arrayListOf("no data"))
+            )
         }
 
         val viewModel = MoviesViewModel(moviesRepo)

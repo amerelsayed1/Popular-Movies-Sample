@@ -1,17 +1,19 @@
 package com.iamer.movies.features.movies.presentation
 
-import android.annotation.SuppressLint
-import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.iamer.movies.R
 import com.iamer.movies.databinding.ItemMovieBinding
 import com.iamer.movies.features.movies.data.models.Movie
 
 
 class MoviesAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback) {
+
+    internal var clickListener: (Movie?) -> Unit = { _ -> }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MovieViewHolder(
@@ -33,6 +35,18 @@ class MoviesAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallb
 
         fun bind(data: Movie?) {
             binding.tvMovieTitle.text = data?.title
+            binding.tvMovieOverView.text = data?.overview
+            Glide
+                .with(binding.ivMovieImg.context)
+                .load(data?.imageUrl)
+                .centerCrop()
+                .placeholder(R.drawable.placeholder)
+                .into(binding.ivMovieImg);
+
+            itemView.setOnClickListener {
+                clickListener(data)
+            }
+
         }
     }
 
