@@ -17,4 +17,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MostPopularMovies-Sample"
+include(":app-compose")
 include(":app")
