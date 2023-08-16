@@ -1,5 +1,8 @@
 package com.iamer.movies.features.movies.presentation
 
+import android.content.Context
+import android.content.Intent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,7 +40,7 @@ import com.iamer.movies.features.movies.data.models.Movie
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MoviesHomeScreen(homeMoviesViewModel: HomeMoviesViewModel) {
+fun MoviesHomeScreen(context: Context, homeMoviesViewModel: HomeMoviesViewModel) {
 
     val result = homeMoviesViewModel.movies.observeAsState()
 
@@ -69,7 +72,7 @@ fun MoviesHomeScreen(homeMoviesViewModel: HomeMoviesViewModel) {
                     }
 
                     is DataState.Success -> {
-                        RecyclerView(response.response.data)
+                        RecyclerView(response.response.data, context)
                     }
 
                     is DataState.Failure -> {
@@ -87,25 +90,36 @@ fun MoviesHomeScreen(homeMoviesViewModel: HomeMoviesViewModel) {
 
 @Composable
 fun RecyclerView(
-    movies: List<Movie>
+    movies: List<Movie>,
+    context: Context
 ) {
-    LazyColumn {
+    LazyColumn() {
         items(items = movies) { movie ->
-            ItemListMovie(movie)
+            ItemListMovie(
+                movie,
+                onClick = {
+                    Intent(context, MoviesDetailsActivity::class.java).apply {
+                        putExtra("movieId", it.id)
+                        context.startActivity(this)
+                    }
+                }
+            )
         }
     }
 }
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun ItemListMovie(movie: Movie) {
+fun ItemListMovie(movie: Movie, onClick: (Movie) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp)
+            .clickable {
+                onClick(movie)
+            },
     ) {
         Row {
-
             Card(
                 modifier = Modifier
                     .width(120.dp)

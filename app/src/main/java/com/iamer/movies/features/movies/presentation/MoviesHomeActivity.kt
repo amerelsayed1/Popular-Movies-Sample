@@ -16,7 +16,7 @@ class MoviesHomeActivity : ComponentActivity() {
         setContent {
             MostPopularMoviesSampleTheme {
                 moviesHomeMoviesViewModel.getMovies()
-                MoviesHomeScreen(moviesHomeMoviesViewModel)
+                MoviesHomeScreen(this, moviesHomeMoviesViewModel)
             }
         }
     }
