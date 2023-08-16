@@ -4,9 +4,9 @@ Android Sample app to show user top popular movies implementing MVVM + Clean Arc
 ## screen Shots
 
 <p float="left">
-  <img src="images/home_screen.png" width="220" />
-  <img src="images/details_screen.png" width="220" />
-  <img src="images/screen_shot_compose.png" width="220" />
+  <img src="images/home_screen.png" width="230" />
+  <img src="images/details_screen.png" width="230" />
+  <img src="images/screen_shot_compose.png" width="230" />
 </p>
 
 ## Clean Architecture
