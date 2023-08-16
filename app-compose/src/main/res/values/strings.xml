@@ -13,5 +13,7 @@
     <string name="movie_details_cast">Cast</string>
     <string name="movie_details_director">Director</string>
     <string name="movie_details_year">Year</string>
+    <string name="item_movie_content_description">movie content</string>
+    <string name="movie_release_date">Release Date</string>
     <!--Movies Feature End-->
 </resources>
