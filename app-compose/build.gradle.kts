@@ -60,14 +60,12 @@ android {
             isMinifyEnabled = false
             isShrinkResources = false
             isDebuggable = true
-            //proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
         getByName(BuildTypes.RELEASE) {
             isMinifyEnabled = false
             isShrinkResources = false
             isDebuggable = false
-            // signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
@@ -156,30 +154,6 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.runtime:runtime-livedata:1.5.0")
     implementation("com.github.bumptech.glide:compose:1.0.0-alpha.1")
-
-    /*
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.20")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.cardview:cardview:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.1")
-
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.google.code.gson:gson:2.10.1")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0-alpha01")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0-alpha01")
-    implementation("com.github.bumptech.glide:glide:4.15.1")
-
-    implementation("androidx.activity:activity-ktx:1.7.2")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")*/
-
 }
 
 kapt {
