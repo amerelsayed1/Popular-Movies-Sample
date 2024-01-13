@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -9,14 +11,6 @@ plugins {
 private object BuildTypes {
     const val DEBUG = "debug"
     const val RELEASE = "release"
-}
-
-private object ProductFlavors {
-    const val PUBLIC = "public"
-}
-
-private object FlavorDimensions {
-    const val DEFAULT = "default"
 }
 
 android {
@@ -37,6 +31,7 @@ android {
         viewBinding = true
     }
 
+
     buildTypes {
         getByName(BuildTypes.DEBUG) {
             isMinifyEnabled = false
@@ -55,13 +50,8 @@ android {
         }
     }
 
-    flavorDimensions.addAll(arrayListOf(FlavorDimensions.DEFAULT))
-    productFlavors {
-        create(ProductFlavors.PUBLIC) {
-            dimension = FlavorDimensions.DEFAULT
-            buildConfigField("String", "BaseUrl", "\"https://api.themoviedb.org/\"")
-        }
-    }
+    //For handling flavors
+    configureVariants()
 
     compileOptions {
         sourceCompatibility = BuildConfig.javaVersion
@@ -81,16 +71,11 @@ dependencies {
     implementation(DependenciesLibs.appCompat)
     implementation(DependenciesLibs.ktxCore)
     implementation(DependenciesLibs.constraintLayout)
-
     implementation(DependenciesLibs.material)
-
     implementation(DependenciesLibs.kotlinCoroutines)
     implementation(DependenciesLibs.kotlinCoroutinesAndroid)
-
     implementation(DependenciesLibs.retrofit)
     implementation(DependenciesLibs.okHttpLoggingInterceptor)
-
-
     implementation(DependenciesLibs.glide)
 
     /** UI Dependencies*/
