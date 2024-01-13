@@ -99,20 +99,3 @@ object DependenciesLibs {
     const val chucker = "com.github.chuckerteam.chucker:library:4.0.0"
     const val chucker_no_op = "com.github.chuckerteam.chucker:library-no-op:4.0.0"
 }
-
-object DevDependenciesLibs {
-    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
-}
-
-object TestingDependenciesLibs {
-    const val junit4 = "junit:junit:${Versions.junit4}"
-    const val mockk = "io.mockk:mockk:${Versions.mockk}"
-    const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
-    const val kluent = "org.amshove.kluent:kluent:${Versions.kluent}"
-    const val testRunner = "androidx.test:runner:${Versions.testRunner}"
-    const val testRules = "androidx.test:rules:${Versions.testRules}"
-    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
-    const val espressoIntents = "androidx.test.espresso:espresso-intents:${Versions.espressoIntents}"
-    const val testExtJunit = "androidx.test.ext:junit:${Versions.testExtensions}"
-    const val hiltTesting = "com.google.dagger:hilt-android-testing:${Versions.hiltTesting}"
-}
