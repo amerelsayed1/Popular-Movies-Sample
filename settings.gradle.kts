@@ -1,11 +1,16 @@
+//noinspection JcenterRepositoryObsolete
 pluginManagement {
     repositories {
+
         jcenter()
         mavenCentral()
         gradlePluginPortal()
         google()
     }
 }
+
+@Suppress("UnstableApiUsage")
+//noinspection JcenterRepositoryObsolete
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
