@@ -10,7 +10,7 @@ class BuildConfig {
         val minSdk = 24
         val targetSdk = 34
 
-        val javaVersion = JavaVersion.VERSION_17
+        val javaVersion = JavaVersion.VERSION_18
         val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 }

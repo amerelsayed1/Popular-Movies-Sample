@@ -1,11 +1,10 @@
 //noinspection JcenterRepositoryObsolete
 pluginManagement {
     repositories {
-
-        jcenter()
         mavenCentral()
         gradlePluginPortal()
         google()
+        jcenter()
     }
 }
 
