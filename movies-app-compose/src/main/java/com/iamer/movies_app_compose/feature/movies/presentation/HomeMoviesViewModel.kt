@@ -4,14 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.iamer.movies.core.network.ResponseBase
 import com.iamer.movies.core.network.usecase.DataState
 import com.iamer.movies.core.network.usecase.UseCase
 import com.iamer.movies.features.movies.data.models.Movie
 import com.iamer.movies.features.movies.data.models.MoviesResponse
-import com.iamer.movies.features.movies.domain.use_case.MovieDetailsUseCase
-import com.iamer.movies.features.movies.domain.use_case.MoviesUseCase
-import com.iamer.movies.features.movies.domain.use_case.SearchMoviesAndSeriesUseCase
+import com.iamer.movies_app_compose.feature.movies.domain.use_case.MovieDetailsUseCase
+import com.iamer.movies_app_compose.feature.movies.domain.use_case.MoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

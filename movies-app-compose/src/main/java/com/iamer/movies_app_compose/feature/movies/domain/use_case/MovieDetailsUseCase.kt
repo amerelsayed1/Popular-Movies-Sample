@@ -1,8 +1,7 @@
-package com.iamer.movies.features.movies.domain.use_case
+package com.iamer.movies_app_compose.feature.movies.domain.use_case
 
 import com.iamer.movies.core.network.usecase.UseCase
 import com.iamer.movies.features.movies.data.models.Movie
-import com.iamer.movies.features.movies.data.models.MoviesResponse
 import com.iamer.movies.features.movies.domain.repositories.MoviesRepository
 import javax.inject.Inject
 

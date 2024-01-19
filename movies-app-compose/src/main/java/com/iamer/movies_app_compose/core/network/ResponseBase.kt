@@ -1,4 +1,6 @@
-package com.iamer.movies.core.network
+package com.iamer.movies_app_compose.core.network
+
+import com.iamer.movies.core.network.ErrorResponse
 
 
 data class ResponseBase<T> (

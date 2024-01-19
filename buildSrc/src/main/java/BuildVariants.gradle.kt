@@ -1,3 +1,4 @@
+/*
 import com.android.build.gradle.AppExtension
 import org.gradle.api.Project
 
@@ -17,3 +18,4 @@ fun Project.configureVariants() {
         }
     }
 }
+*/

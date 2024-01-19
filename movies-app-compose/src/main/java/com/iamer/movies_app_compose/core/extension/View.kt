@@ -1,4 +1,4 @@
-package com.iamer.movies.core.extension
+package com.iamer.movies_app_compose.core.extension
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

@@ -1,4 +1,4 @@
-package com.iamer.movies.core.extension
+package com.iamer.movies_app_compose.core.extension
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
