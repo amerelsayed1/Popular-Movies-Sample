@@ -21,5 +21,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "PopularMovies-Sample"
-include(":app")
+include(":movies-app")
 include(":movies-app-compose")

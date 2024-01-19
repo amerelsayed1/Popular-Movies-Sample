@@ -34,9 +34,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.iamer.movies.R
 import com.iamer.movies.core.network.usecase.DataState
 import com.iamer.movies.features.movies.data.models.Movie
-import com.iamer.movies_app_compose.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

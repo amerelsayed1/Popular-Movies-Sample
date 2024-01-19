@@ -15,15 +15,15 @@ private object FlavorDimensions {
 }
 
 android {
-    namespace = "com.iamer.movies_app_compose"
-    compileSdk = 34
+    namespace = BuildConfig.id
+    compileSdk = BuildConfig.compileSdk
 
     defaultConfig {
-        applicationId = "com.iamer.movies_app_compose"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = BuildConfig.id
+        minSdk = BuildConfig.minSdk
+        targetSdk = BuildConfig.targetSdk
+        versionCode = BuildConfig.versionCode
+        versionName = BuildConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
