@@ -1,7 +1,7 @@
 object Versions {
-    const val standardLibrary = "1.8.10"
+    const val standardLibrary = "1.9.22"
     const val coroutines = "1.3.9"
-    const val hilt = "2.45"
+    const val hilt = "2.46"
     const val appCompat = "1.2.0"
     const val constraintLayout = "2.0.2"
     const val recyclerView = "1.1.0"

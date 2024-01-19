@@ -1,5 +1,0 @@
-<resources>
-
-    <style name="Theme.MostPopularMoviesSample" parent="android:Theme.Material.Light.NoActionBar" />
-
-</resources>

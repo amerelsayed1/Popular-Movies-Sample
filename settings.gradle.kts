@@ -1,8 +1,8 @@
 //noinspection JcenterRepositoryObsolete
 pluginManagement {
     repositories {
-        mavenCentral()
         gradlePluginPortal()
+        mavenCentral()
         google()
         jcenter()
     }
@@ -13,13 +13,13 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        mavenCentral()
         google()
+        mavenCentral()
         jcenter()
 
     }
 }
 
 rootProject.name = "PopularMovies-Sample"
-include(":app-compose")
 include(":app")
+include(":movies-app-compose")

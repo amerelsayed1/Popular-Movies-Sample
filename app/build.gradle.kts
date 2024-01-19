@@ -2,15 +2,24 @@
 
 plugins {
     id("com.android.application")
-    kotlin("android")
+    id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    // kotlin("android")
 }
 
 private object BuildTypes {
     const val DEBUG = "debug"
     const val RELEASE = "release"
+}
+
+private object ProductFlavors {
+    const val PUBLIC = "public"
+}
+
+private object FlavorDimensions {
+    const val DEFAULT = "default"
 }
 
 android {
@@ -51,7 +60,14 @@ android {
     }
 
     //For handling flavors
-    configureVariants()
+    //configureVariants()
+    flavorDimensions.addAll(arrayListOf(FlavorDimensions.DEFAULT))
+    productFlavors {
+        create(ProductFlavors.PUBLIC) {
+            dimension = FlavorDimensions.DEFAULT
+            buildConfigField("String", "BaseUrl", "\"https://api.themoviedb.org/\"")
+        }
+    }
 
     compileOptions {
         sourceCompatibility = BuildConfig.javaVersion
@@ -59,7 +75,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "18"
+        jvmTarget = BuildConfig.javaVersion.toString()
     }
 
 }
