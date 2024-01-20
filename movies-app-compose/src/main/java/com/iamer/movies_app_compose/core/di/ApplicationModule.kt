@@ -1,4 +1,4 @@
-package com.iamer.movies.core.di
+package com.iamer.movies_app_compose.core.di
 
 import com.iamer.movies.features.movies.data.network.MoviesApi
 import com.iamer.movies.features.movies.data.network.MoviesService

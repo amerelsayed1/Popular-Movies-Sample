@@ -2,7 +2,6 @@ package com.iamer.movies.core.platform
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDialog
 import androidx.viewbinding.ViewBinding
 
 

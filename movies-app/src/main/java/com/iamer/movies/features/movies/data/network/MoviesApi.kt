@@ -11,21 +11,21 @@ interface MoviesApi {
 
     @GET("3/search/movie")
     fun searchMoviesAndSeries(
-        @Query("api_key") apiKey: String = "2696829a81b1b5827d515ff121700838",
+        @Query("api_key") apiKey: String = "285dcedfc17a8c1cc87ff6b166092aec",
         @Query("query") query: String,
         @Query("page") page: Int
     ): Call<MoviesResponse>
 
-    @GET("3/movie/popular")
+    @GET("3/movie/upcoming")
     fun popularMovies(
-        @Query("api_key") apiKey: String = "2696829a81b1b5827d515ff121700838",
+        @Query("api_key") apiKey: String = "285dcedfc17a8c1cc87ff6b166092aec",
     ): Call<MoviesResponse>
 
 
     @GET("3/movie/{movie_id}")
     fun getMovieDetails(
         @Path("movie_id") movieId: Int,
-        @Query("api_key") apiKey: String = "2696829a81b1b5827d515ff121700838",
+        @Query("api_key") apiKey: String = "285dcedfc17a8c1cc87ff6b166092aec",
     ): Call<Movie>
 
 }

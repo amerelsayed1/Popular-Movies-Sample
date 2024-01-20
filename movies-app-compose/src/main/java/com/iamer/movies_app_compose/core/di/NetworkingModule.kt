@@ -1,6 +1,6 @@
 package com.iamer.movies_app_compose.core.di
 
-import com.iamer.movies_app_compose.BuildConfig
+import com.iamer.movies.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -2,7 +2,7 @@ package com.iamer.movies.core.network
 
 import android.content.Context
 import android.net.NetworkCapabilities
-import com.iamer.movies.core.extension.connectivityManager
+import com.iamer.movies_app_compose.core.extension.connectivityManager
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton

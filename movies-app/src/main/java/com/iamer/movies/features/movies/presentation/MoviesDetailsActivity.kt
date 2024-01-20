@@ -1,7 +1,6 @@
 package com.iamer.movies.features.movies.presentation
 
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import com.iamer.movies.core.extension.loadFromUrl
 import com.iamer.movies.core.extension.observe
@@ -9,12 +8,10 @@ import com.iamer.movies.core.network.usecase.DataState
 import com.iamer.movies.core.platform.BaseActivity
 import com.iamer.movies.databinding.ActivityMovieDetailsBinding
 import com.iamer.movies.features.movies.data.models.Movie
-import com.iamer.movies.features.movies.data.models.MoviesResponse
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MoviesDetailsActivity : BaseActivity<ActivityMovieDetailsBinding>() {
-
     private val moviesHomeMoviesViewModel: HomeMoviesViewModel by viewModels()
 
     override fun viewBinding() = ActivityMovieDetailsBinding.inflate(layoutInflater)
@@ -39,6 +36,7 @@ class MoviesDetailsActivity : BaseActivity<ActivityMovieDetailsBinding>() {
 
             is DataState.Success -> {
                 viewBinding?.apply {
+                    toolbarMain.title = status.response.title
                     moviePoster.loadFromUrl(status.response.imageUrl)
                     tvMovieSummary.text = status.response.overview
                     tvMovieReleaseDate.text = status.response.releaseDate
@@ -51,5 +49,4 @@ class MoviesDetailsActivity : BaseActivity<ActivityMovieDetailsBinding>() {
 
         }
     }
-
 }

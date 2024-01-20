@@ -85,6 +85,7 @@ dependencies {
     // Application dependencies
     implementation(DependenciesLibs.kotlinStdLib)
     implementation(DependenciesLibs.appCompat)
+    implementation("androidx.activity:activity-ktx:1.8.2")
     implementation(DependenciesLibs.ktxCore)
     implementation(DependenciesLibs.constraintLayout)
     implementation(DependenciesLibs.material)
@@ -107,13 +108,6 @@ dependencies {
     //Dependency Injection
     implementation(DependenciesLibs.hilt)
     kapt(DependenciesLibs.hiltCompiler)
-
-    testImplementation("io.mockk:mockk:1.13.5")
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2")
-    androidTestImplementation("androidx.test:core:1.5.0")
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("androidx.test:rules:1.5.0")
 }
 
 kapt {
