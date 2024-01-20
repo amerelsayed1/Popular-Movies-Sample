@@ -1,20 +1,20 @@
 object Versions {
     const val standardLibrary = "1.9.22"
-    const val coroutines = "1.8.2" // Updated
+    const val coroutines = "1.3.9"
     const val hilt = "2.46"
     const val appCompat = "1.6.1"
-    const val constraintLayout = "2.2.4" // Updated
-    const val material = "1.6.1" // Updated
-    const val lifecycle = "2.6.2" // Updated
-    const val annotations = "1.4.0" // Updated
-    const val ktx = "1.8.0" // Updated
-    const val glide = "4.16.4" // Updated
+    const val constraintLayout = "2.0.2"
+    const val material = "1.6.0-alpha03"
+    const val lifecycle = "2.5.1"
+    const val annotations = "1.1.0"
+    const val ktx = "1.3.2"
+    const val glide = "4.15.1"
     const val retrofit = "2.9.0"
-    const val okHttpLoggingInterceptor = "4.11.1" // Updated
-    const val navigation = "2.6.2" // Updated
+    const val okHttpLoggingInterceptor = "4.9.0"
+    const val navigation = "2.5.3"
 
-    // Testing
-    const val junit4 = "4.13.2" // Updated
+    //Testing
+    const val junit4 = "4.13.1"
 }
 
 object DependenciesLibs {
