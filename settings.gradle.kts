@@ -1,21 +1,25 @@
+//noinspection JcenterRepositoryObsolete
 pluginManagement {
     repositories {
-        jcenter()
-        mavenCentral()
         gradlePluginPortal()
+        mavenCentral()
         google()
+        jcenter()
     }
 }
+
+@Suppress("UnstableApiUsage")
+//noinspection JcenterRepositoryObsolete
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        mavenCentral()
         google()
+        mavenCentral()
         jcenter()
 
     }
 }
 
-rootProject.name = "MostPopularMovies-Sample"
-include(":app-compose")
-include(":app")
+rootProject.name = "PopularMovies-Sample"
+include(":movies-app")
+include(":movies-app-compose")

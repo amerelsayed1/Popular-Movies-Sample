@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/movieDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarMain"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            android:theme="@style/ToolbarTheme"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Popular Movies" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/moviePoster"
+            style="@style/MoviePoster"
+            android:layout_height="240dp"
+            android:layout_centerHorizontal="true"
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop"
+            app:layout_collapseMode="parallax" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/MovieDetailsTitle"
+            android:text="@string/movie_details_summary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMovieSummary"
+            style="@style/MovieDetailsText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/MovieDetailsTitle"
+            android:text="@string/movie_details_year" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMovieReleaseDate"
+            style="@style/MovieDetailsText" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>
